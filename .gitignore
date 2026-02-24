@@ -16,3 +16,13 @@ env/
 .idea/
 .vscode/
 *.swp
+
+# .NET
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+**/Properties/launchSettings.json
+packages.lock.json
