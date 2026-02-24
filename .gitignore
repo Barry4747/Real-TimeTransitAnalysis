@@ -1,0 +1,16 @@
+.env
+.env.*
+!.env.example
+docs/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+env/
+
+# IDE
+.idea/
+.vscode/
+*.swp
