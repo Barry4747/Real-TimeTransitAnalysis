@@ -25,4 +25,6 @@ obj/
 *.userosscache
 *.sln.docstates
 **/Properties/launchSettings.json
-packages.lock.json
+
+# Docker
+docker-compose.override.yml
