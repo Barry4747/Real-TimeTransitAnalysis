@@ -17,8 +17,10 @@ public class VehicleService
 
     public async Task<List<Vehicle>> GetVehiclesByCityAsync(string city)
     {
+        var tresholdTime = DateTime.Now.AddMinutes(-5).ToString("yyyy-MM-ddTHH:mm:ss");
+
         return await _vehiclesCollection
-            .Find(x => x.City.ToLower() == city.ToLower())
+            .Find(x => x.City.ToLower() == city.ToLower() && x.LastUpdated.CompareTo(tresholdTime) >= 0)
             .ToListAsync();
     }
 }
