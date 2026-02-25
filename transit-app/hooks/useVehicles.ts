@@ -1,7 +1,11 @@
 import { useState, useEffect, useCallback } from 'react';
 import { fetchVehicles, Vehicle } from '@/services/vehicleService';
 
-const REFRESH_INTERVAL_MS = 10_000;
+const FETCH_INTERVAL_SECONDS = parseInt(
+    process.env.EXPO_PUBLIC_FETCH_INTERVAL_SECONDS ?? '15',
+    10
+);
+const REFRESH_INTERVAL_MS = FETCH_INTERVAL_SECONDS * 1000;
 
 export interface UseVehiclesResult {
     vehicles: Vehicle[];
